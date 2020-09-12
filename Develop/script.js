@@ -21,85 +21,59 @@ var lowerCase =  confirm("Would you like your password to include lowercase lett
 
 
 var upperCase =  confirm("Would you like your password to include uppercase letters?");
-// var numeric =    confirm("Would you like your password to include numbers?");
-// var specialChar = confirm("Would you like your password to include special characters?");
+var numeric =    confirm("Would you like your password to include numbers?");
+var specialChar = confirm("Would you like your password to include special characters?");
 
 // // Conditional Statements 
 
-var text =          "";
+var text ="";
 var possibleTxt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var possibleNumeric =      "1234567890";
+var possibleNumeric = "1234567890";
 var possibleSpecialChar = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
-// reference code to change a string to
-// var onLowercase = possibleTxt[0].toLocaleLowerCase();
-// console.log(onLowercase);
 
 
-function randomLetter() {
+// // function randomLetter displays both lowercase and uppercase 
+
+function generatePassword() {
   
 
-  for (let i = 0; i < pssLength  ; i++)
+  for (let i = 0; i < pssLength/2; i++)
     text += possibleTxt.charAt(Math.floor(Math.random() * possibleTxt.length));
 
     if (lowerCase === true) {
 
-      // text.toLowerCase();
-      // console.log(text);
-      return text[0].toLocaleLowerCase().concat(text) ; 
-        
-      } 
-      else if (lowerCase === false && upperCase === true){
-
-        return text;
-
-      };
       
+      return text.toLocaleLowerCase(); 
       
+  } else if(lowerCase=== false && upperCase=== true){
 
+    return text;
   }
+    
+  
   
 }
 
-  console.log(text);
-console.log(randomLetter(pssLength));
+console.log(text);
+console.log(generatePassword(pssLength));
 
 
 
-// My initial code below 
-// function randomLetter() {
-  
 
-//   for (var i = 0; i < pssLength  ; i++)
-//     text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-//     if (lowerCase === true) {
-
-//       return text.toLowerCase();
-
-//     }
-
-//     else {
-//       return text;
-
-//     }
-
-// }
-
-// console.log(randomLetter(pssLength));
 
 
 
 
 // // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
+  passwordText.value = password;
 
-// }
+}
 
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
