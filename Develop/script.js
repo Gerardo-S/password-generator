@@ -20,35 +20,73 @@ while (pssLength > maxLength || pssLength < minLength) {
 var lowerCase =  confirm("Would you like your password to include lowercase letters?");
 
 
-// var upperCase =  confirm("Would you like your password to include uppercase letters?");
+var upperCase =  confirm("Would you like your password to include uppercase letters?");
 // var numeric =    confirm("Would you like your password to include numbers?");
 // var specialChar = confirm("Would you like your password to include special characters?");
 
-// Conditional Statements 
+// // Conditional Statements 
 
-var text = "";
-var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var text =          "";
+var possibleTxt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var possibleNumeric =      "1234567890";
+var possibleSpecialChar = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+// reference code to change a string to
+// var onLowercase = possibleTxt[0].toLocaleLowerCase();
+// console.log(onLowercase);
+
 
 function randomLetter() {
   
 
-  for (var i = 0; i < pssLength  ; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  for (let i = 0; i < pssLength  ; i++)
+    text += possibleTxt.charAt(Math.floor(Math.random() * possibleTxt.length));
 
     if (lowerCase === true) {
 
-      return text.toLowerCase();
+      // text.toLowerCase();
+      // console.log(text);
+      return text[0].toLocaleLowerCase().concat(text) ; 
+        
+      } 
+      else if (lowerCase === false && upperCase === true){
 
-    }
+        return text;
 
-    else {
-      return text;
+      };
+      
+      
 
-    }
-
+  }
+  
 }
 
+  console.log(text);
 console.log(randomLetter(pssLength));
+
+
+
+// My initial code below 
+// function randomLetter() {
+  
+
+//   for (var i = 0; i < pssLength  ; i++)
+//     text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+//     if (lowerCase === true) {
+
+//       return text.toLowerCase();
+
+//     }
+
+//     else {
+//       return text;
+
+//     }
+
+// }
+
+// console.log(randomLetter(pssLength));
 
 
 
