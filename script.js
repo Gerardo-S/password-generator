@@ -23,7 +23,7 @@ if (pssLength > maxLength || pssLength < minLength){
   var upperCase =  confirm("Would you like your password to include uppercase letters?");
   var numeric =    confirm("Would you like your password to include numbers?");
   var specialChar = confirm("Would you like your password to include special characters?");
-  for (var i = 0; i < pssLength-1; i++){
+  for (var i = 1; i < pssLength; i++){
     text += possibleTxt.charAt(Math.floor(Math.random() * possibleTxt.length));
 
   }
@@ -34,18 +34,26 @@ if (pssLength > maxLength || pssLength < minLength){
     
     return text.toLocaleLowerCase(); 
     
+    
   } 
+
+  else if (lowerCase === true && upperCase === true){
+    
+    var mixed = possibleTxt.charAt(Math.floor(Math.random() * possibleTxt.length)) + text.toLocaleLowerCase(); 
+    return mixed;
+
+  }
   
   else if (lowerCase === false && upperCase === true){
     
-    return text;
+    return text += possibleTxt.charAt(Math.floor(Math.random() * possibleTxt.length));
 
   }
   
   
   
 }
-  return text;
+  
 }
 // Write password to the #password input
 function writePassword() {
