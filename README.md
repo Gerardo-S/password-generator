@@ -7,7 +7,9 @@ A password generator capable of generating a password with user's specified crit
 A password generated with a length of 9 characters and with the following criteria lowercase,uppercase, and numerical character.
 <img src="Assets\generated-password.PNG">
 Link to to deployed application:
-<a href="https://gerardo-s.github.io/password-generator/">https://gerardo-s.github.io/password-generator/
+<a href="https://gerardo-s.github.io/password-generator/">https://gerardo-s.github.io/password-generator/ <br>
+License <br>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 
